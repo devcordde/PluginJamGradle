@@ -1,4 +1,9 @@
 import io.papermc.paperweight.userdev.ReobfArtifactConfiguration
+import java.net.URI
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
+import java.nio.file.Files
 
 plugins {
     java
@@ -48,6 +53,26 @@ tasks {
 
     runServer {
         minecraftVersion("1.21.1")
+    }
+
+    register("uploadJar") {
+        dependsOn(jar)
+
+        doLast {
+            val filePath = project.tasks.jar.get().archiveFile.get().asFile.toPath()
+            // Add the upload api url to your repo secrets under UPLOAD_URL
+            // Obtain the upload url via /team api
+            val apiUrl = System.getenv("UPLOAD_URL")
+            val client = HttpClient.newHttpClient()
+            val request = HttpRequest.newBuilder()
+                .uri(URI.create(apiUrl))
+                .header("Content-Type", "application/octet-stream")
+                .POST(HttpRequest.BodyPublishers.ofByteArray(Files.readAllBytes(filePath)))
+                .build()
+            val response = client.send(request, HttpResponse.BodyHandlers.ofString())
+            if (response.statusCode() != 202) throw RuntimeException("Could not upload:\n" + response.body())
+            println("Upload successful")
+        }
     }
 }
 
