@@ -66,6 +66,7 @@ tasks {
             val client = HttpClient.newHttpClient()
             val request = HttpRequest.newBuilder()
                 .uri(URI.create(apiUrl))
+                //.uri(URI.create("$apiUrl?restart=true"))
                 .header("Content-Type", "application/octet-stream")
                 .POST(HttpRequest.BodyPublishers.ofByteArray(Files.readAllBytes(filePath)))
                 .build()
