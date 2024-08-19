@@ -1,7 +1,7 @@
 plugins {
     java
     `maven-publish`
-    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("com.gradleup.shadow") version "8.3.0"
     id("xyz.jpenilla.run-paper") version "1.0.6"
     id("net.minecrell.plugin-yml.bukkit") version "0.5.1"
 }
@@ -23,12 +23,12 @@ dependencies {
 }
 
 group = "club.devcord.gamejam"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 description = "gamejam"
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
 
@@ -46,5 +46,5 @@ bukkit {
     name = "GameJamPlugin"
     load = net.minecrell.pluginyml.bukkit.BukkitPluginDescription.PluginLoadOrder.STARTUP
     main = "club.devcord.gamejam.JamPlugin"
-    apiVersion = "1.18"
+    apiVersion = "1.21"
 }
