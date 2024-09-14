@@ -27,7 +27,7 @@ description = "gamejam"
 dependencies {
     testImplementation("junit:junit:4.13.2")
     paperweight.paperDevBundle("1.21.1-R0.1-SNAPSHOT")
-    compileOnly("de.chojo.pluginjam:plugin-paper:1.0.3")
+    compileOnly("de.chojo.pluginjam:plugin-paper:1.0.4")
 }
 
 paperweight {
