@@ -1,4 +1,4 @@
-name: Gradle Upload
+name: Gradle Build
 
 on:
   push:
