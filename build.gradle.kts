@@ -11,7 +11,7 @@ plugins {
     id("com.gradleup.shadow") version "8.3.5"
     id("xyz.jpenilla.run-paper") version "2.3.1"
     id("net.minecrell.plugin-yml.bukkit") version "0.6.0"
-    id("io.papermc.paperweight.userdev") version "1.7.6"
+    id("io.papermc.paperweight.userdev") version "1.7.7"
 }
 
 repositories {
