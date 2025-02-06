@@ -11,12 +11,12 @@ plugins {
     id("com.gradleup.shadow") version "8.3.6"
     id("xyz.jpenilla.run-paper") version "2.3.1"
     id("net.minecrell.plugin-yml.bukkit") version "0.6.0"
-    id("io.papermc.paperweight.userdev") version "1.7.7"
+    id("io.papermc.paperweight.userdev") version "2.0.0-beta.14"
 }
 
 repositories {
     mavenCentral()
-    maven("https://papermc.io/repo/repository/maven-public/")
+    maven("https://repo.papermc.io/repository/maven-public/")
     maven("https://eldonexus.de/repository/maven-releases/")
 }
 
@@ -26,7 +26,7 @@ description = "gamejam"
 
 dependencies {
     testImplementation("junit:junit:4.13.2")
-    paperweight.paperDevBundle("1.21.1-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.21.4-R0.1-SNAPSHOT")
     compileOnly("de.chojo.pluginjam:plugin-paper:1.0.4")
 }
 
