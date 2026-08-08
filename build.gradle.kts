@@ -9,7 +9,7 @@ plugins {
     java
     `maven-publish`
     id("com.gradleup.shadow") version "9.0.2"
-    id("xyz.jpenilla.run-paper") version "2.3.1"
+    id("xyz.jpenilla.run-paper") version "3.1.0"
     id("net.minecrell.plugin-yml.bukkit") version "0.6.0"
     id("io.papermc.paperweight.userdev") version "2.0.0-beta.18"
 }
